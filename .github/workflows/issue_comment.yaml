@@ -1,0 +1,13 @@
+name: create a comment on new issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-with-action:
+    runs-on: windows-latest
+    steps:
+      - name: "dump github conext"
+        run: echo '${{ toJSON( github.event ) }}' | jq
+        shell: bash
