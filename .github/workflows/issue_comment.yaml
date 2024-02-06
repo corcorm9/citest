@@ -6,6 +6,7 @@ on:
 
 jobs:
   comment-with-action:
+    permissions: write-all
     runs-on: windows-latest
     steps:
       - name: "dump github conext"
