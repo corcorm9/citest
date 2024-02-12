@@ -5,15 +5,18 @@ on:
     paths:
       - '**.html'
       - '**.htm'
-    branches: [master]
 
 jobs:
   test_pull_request:
-    runs-on: ubuntu_latest
+    runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: setup node
+        uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm run htmlvalidate
+      - name: download npm
+        run: npm ci
+      - name: run html tests
+        run: npm run htmlvalidate
