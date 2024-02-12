@@ -1,0 +1,19 @@
+name: Test Code Pull Requested
+
+on: 
+  pull_request:
+    paths:
+      - '**.html'
+      - '**.htm'
+    branches: [master]
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu_latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run htmlvalidate

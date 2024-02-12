@@ -1,0 +1,14 @@
+{
+  "name": "citest",
+  "version": "1.0.0",
+  "description": "testing actions",
+  "main": "index.js",
+  "scripts": {
+    "htmlvalidate": "node validator.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-validator": "^6.0.1"
+  }
+}
